@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CorpSolutions S.A. - Registro de Visitantes</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Fuentes: Montserrat para títulos, Roboto para texto -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="CorpSolutions S.A. Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="nav-link" data-section="inicio">Inicio</a></li>
+        <li><a href="#" class="nav-link" data-section="registro">Registro</a></li>
+        <li><a href="#" class="nav-link" data-section="sobre-nosotros">Sobre Nosotros</a></li>
+        <li><a href="#" class="nav-link" data-section="contactanos">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- Sección Inicio con video de fondo -->
+    <section id="inicio" class="page-section inicio-hero">
+      <div class="video-container">
+        <video autoplay loop muted playsinline id="bgVideo">
+          <source src="video/background.mp4" type="video/mp4">
+          Tu navegador no soporta el video.
+        </video>
+        <div class="overlay"></div>
+      </div>
+      <div class="inicio-grid">
+        <div class="inicio-texto">
+          <h2>Bienvenido a <span class="brand">CorpSolutions S.A.</span></h2>
+          <p class="lead">
+            Somos líderes en soluciones corporativas y tecnológicas,<br>
+            comprometidos con la excelencia y la innovación.
+          </p>
+          <a href="#" class="btn-cta nav-link" data-section="registro">Registra tu visita</a>
+        </div>
+        <div class="inicio-imagen">
+          <img src="img/presentation.jpg" alt="Empresa CorpSolutions" />
+        </div>
+      </div>
+    </section>
+    <!-- Sección Registro -->
+    <section id="registro" class="page-section" style="display: none;">
+      <h2>Registro de Visitantes</h2>
+      <form id="visitorForm" class="form-container">
+        <div class="form-group">
+          <label for="cedula">Número de Cédula:</label>
+          <input type="text" id="cedula" name="cedula" placeholder="999-999999-9999X" maxlength="16" required>
+          <span class="error-message" id="cedulaError"></span>
+        </div>
+        <div class="form-group">
+          <label for="nombres">Nombres:</label>
+          <input type="text" id="nombres" name="nombres" required>
+          <span class="error-message" id="nombresError"></span>
+        </div>
+        <div class="form-group">
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" id="apellidos" name="apellidos" required>
+          <span class="error-message" id="apellidosError"></span>
+        </div>
+        <div class="form-group">
+          <label for="departamento">Departamento que visita:</label>
+          <select id="departamento" name="departamento" required>
+            <option value="">Seleccione...</option>
+            <option value="Ventas">Ventas</option>
+            <option value="Crédito">Crédito</option>
+            <option value="Recursos Humanos">Recursos Humanos</option>
+          </select>
+          <span class="error-message" id="departamentoError"></span>
+        </div>
+        <div class="form-group">
+          <label for="motivo">Motivo de la Visita:</label>
+          <textarea id="motivo" name="motivo" rows="3" required></textarea>
+          <span class="error-message" id="motivoError"></span>
+        </div>
+        <button type="submit" id="registerButton">Registrar</button>
+      </form>
+      <!-- Tabla para mostrar visitantes registrados -->
+      <section class="table-section">
+        <h2>Visitantes Registrados</h2>
+        <table id="visitorTable">
+          <thead>
+            <tr>
+              <th>Cédula</th>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>Departamento</th>
+              <th>Motivo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Los registros se agregarán aquí -->
+          </tbody>
+        </table>
+      </section>
+    </section>
+    <!-- Sección Sobre Nosotros -->
+    <section id="sobre-nosotros" class="page-section" style="display: none;">
+      <h2>Sobre Nosotros</h2>
+      <p>En CorpSolutions S.A., nos especializamos en brindar asesorías y soluciones innovadoras para optimizar procesos corporativos, combinando la tecnología de punta con un equipo comprometido.</p>
+      <p>Nuestra misión es superar las expectativas de los clientes, manteniendo valores de integridad y excelencia.</p>
+      <!-- Imagen de equipo o instalaciones -->
+      <img src="img/team.jpg" alt="Nuestro Equipo">
+    </section>
+    <!-- Sección Contáctanos -->
+    <section id="contactanos" class="page-section" style="display: none;">
+      <h2>Contáctanos</h2>
+      <p>Si deseas conocer más sobre nuestros servicios o tienes alguna consulta, no dudes en contactarnos:</p>
+      <ul>
+        <li>Teléfono: +1 234 567 890</li>
+        <li>Email: info@corpsolutions.com</li>
+        <li>Dirección: Calle Falsa 123, Ciudad, País</li>
+      </ul>
+      <form id="contactForm" class="form-container">
+        <div class="form-group">
+          <label for="contactName">Nombre:</label>
+          <input type="text" id="contactName" name="contactName" required>
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Email:</label>
+          <input type="email" id="contactEmail" name="contactEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Mensaje:</label>
+          <textarea id="contactMessage" name="contactMessage" rows="3" required></textarea>
+        </div>
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 CorpSolutions S.A. Todos los derechos reservados.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
