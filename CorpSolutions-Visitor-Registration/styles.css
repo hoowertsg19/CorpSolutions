@@ -1,10 +1,9 @@
-/* General Styles */
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background: #fff;
   color: #333;
   margin: 0;
@@ -12,10 +11,9 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
 header {
   background-color: #003366;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,7 +27,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -46,7 +44,6 @@ header {
   transform: scale(1.1);
 }
 
-/* Navigation Styles */
 nav ul {
   list-style: none;
   padding: 0;
@@ -62,21 +59,21 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   position: relative;
   transition: all 0.3s ease;
   display: block;
   padding: 0.8rem 1.6rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
   color: #fff;
-  background: #00AEEF;
+  background: #00aeef;
 }
 
 nav ul li a::after {
@@ -84,7 +81,7 @@ nav ul li a::after {
   display: block;
   width: 0;
   height: 2px;
-  background: #00AEEF;
+  background: #00aeef;
   transition: width 0.3s;
   position: absolute;
   bottom: -5px;
@@ -96,11 +93,11 @@ nav ul li a.active::after {
   width: 100%;
 }
 
-h1, h2 {
-  font-family: 'Montserrat', sans-serif;
+h1,
+h2 {
+  font-family: "Montserrat", sans-serif;
 }
 
-/* Main Sections */
 main {
   padding: 0;
 }
@@ -117,12 +114,13 @@ main {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  left: 0; right: 0; top: 0;
+  left: 0;
+  right: 0;
+  top: 0;
   z-index: 0;
   pointer-events: none;
 }
 
-/* Sección Inicio con Video de Fondo */
 .video-container {
   position: relative;
   overflow: hidden;
@@ -151,13 +149,13 @@ video-container .overlay {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   padding: 1rem;
 }
 
 .inicio-contenido h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2.5rem;
   margin: 0.5rem;
 }
@@ -178,7 +176,6 @@ video-container .overlay {
   transform: scale(1.05);
 }
 
-/* Sección Inicio Hero */
 .inicio-hero {
   background: linear-gradient(90deg, #fff 60%, #e6f4fa 100%);
   min-height: 60vh;
@@ -213,7 +210,7 @@ video-container .overlay {
 }
 
 .inicio-texto h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2.8rem;
   margin-bottom: 1.2rem;
   font-weight: 700;
@@ -221,12 +218,12 @@ video-container .overlay {
 }
 
 .inicio-texto .brand {
-  color: #00AEEF;
+  color: #00aeef;
   font-weight: 700;
 }
 
 .inicio-texto .lead {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
   margin-bottom: 2rem;
   line-height: 1.4;
@@ -235,15 +232,15 @@ video-container .overlay {
 
 .btn-cta {
   display: inline-block;
-  background: #00AEEF;
+  background: #00aeef;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
   padding: 1rem 2.5rem;
   border-radius: 30px;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: background 0.3s, transform 0.2s;
   text-align: center;
   letter-spacing: 1px;
@@ -264,11 +261,10 @@ video-container .overlay {
   width: 100%;
   max-width: 420px;
   border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
   object-fit: cover;
 }
 
-/* Sección Sobre Nosotros */
 #sobre-nosotros img {
   width: 80%;
   max-width: 600px;
@@ -277,23 +273,23 @@ video-container .overlay {
   border-radius: 8px;
 }
 
-.form-section, .table-section {
+.form-section,
+.table-section {
   margin-bottom: 2rem;
 }
 
-/* Formularios */
 .form-container {
-  background: #F9F9F9;
+  background: #f9f9f9;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   margin: 2rem auto;
   transition: box-shadow 0.3s;
 }
 
 .form-container:hover {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .form-group {
@@ -306,23 +302,28 @@ label {
   margin-bottom: 0.5rem;
 }
 
-input, select, textarea, button {
+input,
+select,
+textarea,
+button {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   border-radius: 4px;
   font-size: 1rem;
   transition: border-color 0.3s;
 }
 
-input:focus, select:focus, textarea:focus {
-  border-color: #00AEEF;
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #00aeef;
   outline: none;
 }
 
 button {
   background-color: #003366;
-  color: #FFFFFF;
+  color: #ffffff;
   border: none;
   cursor: pointer;
   font-size: 1rem;
@@ -330,84 +331,82 @@ button {
 }
 
 button:hover {
-  background-color: #00AEEF;
+  background-color: #00aeef;
   transform: translateY(-2px);
 }
 
 .error-message {
-  color: #E53935;
+  color: #e53935;
   font-size: 0.875rem;
   display: none;
   margin-top: 0.25rem;
 }
 
-/* Tabla de Visitantes */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 2rem;
 }
 
-table th, table td {
-  border: 1px solid #CCCCCC;
+table th,
+table td {
+  border: 1px solid #cccccc;
   padding: 0.75rem;
   text-align: left;
 }
 
 table th {
   background-color: #003366;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-/* Footer */
 footer {
   background-color: #003366;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
 }
 
-/* Responsividad */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     text-align: center;
   }
-  
+
   nav ul {
     flex-direction: column;
   }
-  
+
   nav ul li {
     margin: 0.5rem 0;
   }
-  
+
   .inicio-contenido h2 {
     font-size: 1.8rem;
   }
-  
+
   .inicio-contenido p {
     font-size: 1rem;
   }
-  
+
   .video-container {
     height: 50vh;
   }
-  
+
   #sobre-nosotros img {
     width: 100%;
   }
 }
 
-/* Responsividad */
 @media (max-width: 900px) {
   .inicio-grid {
     flex-direction: column;
     gap: 2rem;
     padding: 2rem 1rem;
   }
-  .inicio-texto, .inicio-imagen {
+  .inicio-texto,
+  .inicio-imagen {
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -420,10 +419,12 @@ footer {
   }
 }
 
-/* Video de fondo en inicio */
 .video-bg-container {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   overflow: hidden;
 }
@@ -436,17 +437,19 @@ footer {
 }
 .video-overlay {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(90deg, #fff 60%, #e6f4fa 100%);
   opacity: 0.7;
   z-index: 1;
 }
 
-/* Mejoras para Registro */
 #registro .form-container {
   background: #f4fbff;
   border: 1px solid #b6e0f7;
-  box-shadow: 0 2px 12px rgba(0,174,239,0.07);
+  box-shadow: 0 2px 12px rgba(0, 174, 239, 0.07);
 }
 #registro h2 {
   text-align: center;
@@ -457,27 +460,27 @@ footer {
   color: #003366;
 }
 #registro button {
-  background: linear-gradient(90deg, #00AEEF 60%, #003366 100%);
+  background: linear-gradient(90deg, #00aeef 60%, #003366 100%);
   font-weight: bold;
   letter-spacing: 1px;
 }
 #registro .table-section {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,51,102,0.07);
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.07);
   padding: 2rem 1rem;
   margin-top: 2rem;
 }
-#registro table th, #registro table td {
+#registro table th,
+#registro table td {
   font-size: 1rem;
 }
 
-/* Mejoras para Sobre Nosotros */
 #sobre-nosotros {
   background: linear-gradient(120deg, #e6f4fa 60%, #fff 100%);
   padding: 3rem 1rem;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,174,239,0.06);
+  box-shadow: 0 2px 12px rgba(0, 174, 239, 0.06);
   margin: 2rem auto;
   max-width: 900px;
 }
@@ -496,17 +499,16 @@ footer {
   display: block;
   margin: 2rem auto 0 auto;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,174,239,0.09);
+  box-shadow: 0 2px 12px rgba(0, 174, 239, 0.09);
   max-width: 400px;
   width: 90%;
 }
 
-/* Mejoras para Contactanos */
 #contactanos {
   background: linear-gradient(120deg, #fff 60%, #e6f4fa 100%);
   padding: 3rem 1rem;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,174,239,0.06);
+  box-shadow: 0 2px 12px rgba(0, 174, 239, 0.06);
   margin: 2rem auto;
   max-width: 900px;
 }
@@ -529,21 +531,29 @@ footer {
 #contactanos .form-container {
   background: #f4fbff;
   border: 1px solid #b6e0f7;
-  box-shadow: 0 2px 12px rgba(0,174,239,0.07);
+  box-shadow: 0 2px 12px rgba(0, 174, 239, 0.07);
 }
 
-/* Responsividad extra */
 @media (max-width: 600px) {
-  .inicio-hero, #sobre-nosotros, #contactanos, #registro .form-container, #registro .table-section {
+  .inicio-hero,
+  #sobre-nosotros,
+  #contactanos,
+  #registro .form-container,
+  #registro .table-section {
     padding: 1rem !important;
   }
-  .inicio-texto h2, #sobre-nosotros h2, #contactanos h2, #registro h2 {
+  .inicio-texto h2,
+  #sobre-nosotros h2,
+  #contactanos h2,
+  #registro h2 {
     font-size: 1.3rem !important;
   }
-  .inicio-imagen img, #sobre-nosotros img {
+  .inicio-imagen img,
+  #sobre-nosotros img {
     max-width: 95vw;
   }
-  #registro .form-container, #contactanos .form-container {
+  #registro .form-container,
+  #contactanos .form-container {
     padding: 1rem;
   }
 }
