@@ -123,3 +123,17 @@ if(contactForm) {
     contactForm.reset();
   });
 }
+
+// --------- Modo Oscuro --------- //
+const darkModeToggle = document.getElementById('darkModeToggle');
+
+darkModeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  
+  // Cambiar el texto del botón
+  if (document.body.classList.contains('dark-mode')) {
+    darkModeToggle.textContent = 'Modo Claro';
+  } else {
+    darkModeToggle.textContent = 'Modo Oscuro';
+  }
+});
