@@ -2,27 +2,29 @@
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('.page-section');
 
-// Función para quitar clase "active" de todos los enlaces
-function clearActiveLinks() {
-  navLinks.forEach(link => link.classList.remove('active'));
+function showSection(sectionId) {
+  sections.forEach(section => {
+    if (section.id === sectionId) {
+      section.style.display = 'block'; // Mostrar la sección seleccionada
+    } else {
+      section.style.display = 'none'; // Ocultar las demás secciones
+    }
+  });
 }
 
 navLinks.forEach(link => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
-    const targetSection = event.target.getAttribute('data-section');
-    // Oculta todas las secciones con animación
-    sections.forEach(section => {
-      section.style.display = 'none';
-      section.classList.remove('fade-in');
-    });
-    // Muestra la sección seleccionada con efecto
-    const activeSection = document.getElementById(targetSection);
-    activeSection.style.display = 'block';
-    setTimeout(() => activeSection.classList.add('fade-in'), 50);
-    clearActiveLinks();
-    event.target.classList.add('active');
+    const targetSection = link.getAttribute('data-section');
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+    showSection(targetSection);
   });
+});
+
+// Mostrar la sección de inicio al cargar
+document.addEventListener('DOMContentLoaded', () => {
+  showSection('inicio');
 });
 
 // --------- Registro de Visitantes --------- //
@@ -49,7 +51,7 @@ function clearError(input) {
 // Valida formato de cédula
 function validateCedula(cedula) {
   const cedulaRegex = /^\d{3}-\d{6}-\d{4}[A-Z]$/;
-  return cedulaRegex.test(cedula);
+  return cedulaRegex.test(cedula) && cedula.length === 16;
 }
 
 // Valida el formulario

@@ -9,13 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+  <header class="header-blanco">
     <div class="logo-container">
       <img src="img/logo.png" alt="CorpSolutions S.A. Logo">
     </div>
     <nav>
       <ul>
-        <li><a href="#" class="nav-link" data-section="inicio">Inicio</a></li>
+        <li><a href="#" class="nav-link active" data-section="inicio">Inicio</a></li>
         <li><a href="#" class="nav-link" data-section="registro">Registro</a></li>
         <li><a href="#" class="nav-link" data-section="sobre-nosotros">Sobre Nosotros</a></li>
         <li><a href="#" class="nav-link" data-section="contactanos">Contáctanos</a></li>
@@ -25,12 +25,11 @@
   <main>
     <!-- Sección Inicio con video de fondo -->
     <section id="inicio" class="page-section inicio-hero">
-      <div class="video-container">
-        <video autoplay loop muted playsinline id="bgVideo">
+      <div class="video-bg-container">
+        <video autoplay muted loop id="bgVideo">
           <source src="video/background.mp4" type="video/mp4">
-          Tu navegador no soporta el video.
         </video>
-        <div class="overlay"></div>
+        <div class="video-overlay"></div>
       </div>
       <div class="inicio-grid">
         <div class="inicio-texto">

@@ -5,8 +5,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #FFFFFF;
-  color: #333333;
+  background: #fff;
+  color: #333;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -22,10 +22,24 @@ header {
   padding: 1rem 2rem;
 }
 
+.header-blanco {
+  background: #fff;
+  color: #003366;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 .logo-container img {
   width: 120px;
   height: auto;
   transition: transform 0.3s;
+  display: block;
 }
 
 .logo-container img:hover {
@@ -38,10 +52,13 @@ nav ul {
   padding: 0;
   display: flex;
   margin: 0;
+  background: #003366;
+  border-radius: 30px;
+  overflow: hidden;
 }
 
 nav ul li {
-  margin: 0 1rem;
+  margin: 0;
 }
 
 nav ul li a {
@@ -50,11 +67,16 @@ nav ul li a {
   font-weight: bold;
   position: relative;
   transition: all 0.3s ease;
+  display: block;
+  padding: 0.8rem 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: #00AEEF;
+  color: #fff;
+  background: #00AEEF;
 }
 
 nav ul li a::after {
@@ -84,8 +106,20 @@ main {
 }
 
 .page-section {
-  padding: 4rem 2rem;
-  text-align: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s, visibility 0.5s;
+  position: relative;
+  z-index: 1;
+}
+
+.page-section.hide-section {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* Sección Inicio con Video de Fondo */
@@ -103,7 +137,7 @@ main {
   transition: opacity 0.5s;
 }
 
-.video-container .overlay {
+video-container .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -146,12 +180,14 @@ main {
 
 /* Sección Inicio Hero */
 .inicio-hero {
-  background: linear-gradient(90deg, #003366 60%, #00AEEF 100%);
+  background: linear-gradient(90deg, #fff 60%, #e6f4fa 100%);
   min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .inicio-grid {
@@ -163,11 +199,13 @@ main {
   margin: 0 auto;
   gap: 3rem;
   padding: 3rem 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .inicio-texto {
   flex: 1;
-  color: #fff;
+  color: #003366;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -192,7 +230,7 @@ main {
   font-size: 1.5rem;
   margin-bottom: 2rem;
   line-height: 1.4;
-  color: #e0e0e0;
+  color: #333;
 }
 
 .btn-cta {
@@ -200,13 +238,15 @@ main {
   background: #00AEEF;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  padding: 0.9rem 2.2rem;
+  padding: 1rem 2.5rem;
   border-radius: 30px;
   text-decoration: none;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: background 0.3s, transform 0.2s;
+  text-align: center;
+  letter-spacing: 1px;
 }
 .btn-cta:hover {
   background: #0090c7;
@@ -377,5 +417,133 @@ footer {
   }
   .inicio-texto .lead {
     font-size: 1.1rem;
+  }
+}
+
+/* Video de fondo en inicio */
+.video-bg-container {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+#bgVideo {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  min-height: 400px;
+  opacity: 0.45;
+}
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(90deg, #fff 60%, #e6f4fa 100%);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+/* Mejoras para Registro */
+#registro .form-container {
+  background: #f4fbff;
+  border: 1px solid #b6e0f7;
+  box-shadow: 0 2px 12px rgba(0,174,239,0.07);
+}
+#registro h2 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 1.5rem;
+}
+#registro .form-group label {
+  color: #003366;
+}
+#registro button {
+  background: linear-gradient(90deg, #00AEEF 60%, #003366 100%);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+#registro .table-section {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,51,102,0.07);
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+#registro table th, #registro table td {
+  font-size: 1rem;
+}
+
+/* Mejoras para Sobre Nosotros */
+#sobre-nosotros {
+  background: linear-gradient(120deg, #e6f4fa 60%, #fff 100%);
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,174,239,0.06);
+  margin: 2rem auto;
+  max-width: 900px;
+}
+#sobre-nosotros h2 {
+  color: #003366;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+#sobre-nosotros p {
+  font-size: 1.15rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+#sobre-nosotros img {
+  display: block;
+  margin: 2rem auto 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,174,239,0.09);
+  max-width: 400px;
+  width: 90%;
+}
+
+/* Mejoras para Contactanos */
+#contactanos {
+  background: linear-gradient(120deg, #fff 60%, #e6f4fa 100%);
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,174,239,0.06);
+  margin: 2rem auto;
+  max-width: 900px;
+}
+#contactanos h2 {
+  color: #003366;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+#contactanos ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+#contactanos ul li {
+  margin-bottom: 0.5rem;
+  color: #003366;
+  font-weight: 500;
+}
+#contactanos .form-container {
+  background: #f4fbff;
+  border: 1px solid #b6e0f7;
+  box-shadow: 0 2px 12px rgba(0,174,239,0.07);
+}
+
+/* Responsividad extra */
+@media (max-width: 600px) {
+  .inicio-hero, #sobre-nosotros, #contactanos, #registro .form-container, #registro .table-section {
+    padding: 1rem !important;
+  }
+  .inicio-texto h2, #sobre-nosotros h2, #contactanos h2, #registro h2 {
+    font-size: 1.3rem !important;
+  }
+  .inicio-imagen img, #sobre-nosotros img {
+    max-width: 95vw;
+  }
+  #registro .form-container, #contactanos .form-container {
+    padding: 1rem;
   }
 }
