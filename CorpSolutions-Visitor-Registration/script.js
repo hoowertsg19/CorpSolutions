@@ -26,9 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const form = document.getElementById("visitorForm");
-const visitorTable = document
-  .getElementById("visitorTable")
-  .querySelector("tbody");
+const visitorTable = document.getElementById("visitorTable").querySelector("tbody");
+
+// 🟦 Contador de visitantes registrados
+let count = 0;
+function updateCounter() {
+  document.getElementById("counter").textContent = `Visitantes registrados: ${++count}`;
+}
 
 function showError(input, message) {
   const errorSpan = document.getElementById(`${input.id}Error`);
@@ -83,6 +87,7 @@ function addVisitorToTable(visitor) {
     <td>${visitor.motivo}</td>
   `;
   visitorTable.appendChild(row);
+  updateCounter(); // 🔄 Actualiza el contador después de agregar
 }
 
 if (form) {
@@ -113,14 +118,3 @@ if (contactForm) {
   });
 }
 
-const darkModeToggle = document.getElementById("darkModeToggle");
-
-darkModeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-
-  if (document.body.classList.contains("dark-mode")) {
-    darkModeToggle.textContent = "Modo Claro";
-  } else {
-    darkModeToggle.textContent = "Modo Oscuro";
-  }
-});

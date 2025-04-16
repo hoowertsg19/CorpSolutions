@@ -11,15 +11,7 @@ body {
   line-height: 1.6;
 }
 
-header {
-  background-color: #003366;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-}
-
+/* ===== HEADER ===== */
 .header-blanco {
   background: #fff;
   color: #003366;
@@ -27,7 +19,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -37,7 +29,6 @@ header {
   width: 120px;
   height: auto;
   transition: transform 0.3s;
-  display: block;
 }
 
 .logo-container img:hover {
@@ -62,17 +53,16 @@ nav ul li a {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
-  position: relative;
-  transition: all 0.3s ease;
   display: block;
   padding: 0.8rem 1.6rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: #fff;
   background: #00aeef;
 }
 
@@ -93,98 +83,43 @@ nav ul li a.active::after {
   width: 100%;
 }
 
-h1,
-h2 {
-  font-family: "Montserrat", sans-serif;
-}
-
-main {
-  padding: 0;
-}
-
-.page-section {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.5s, visibility 0.5s;
-  position: relative;
-  z-index: 1;
-}
-
-.page-section.hide-section {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.video-container {
-  position: relative;
-  overflow: hidden;
-  height: 70vh;
-}
-
-#bgVideo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-  transition: opacity 0.5s;
-}
-
-video-container .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 51, 102, 0.5);
-}
-
-.inicio-contenido {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #ffffff;
-  text-align: center;
-  padding: 1rem;
-}
-
-.inicio-contenido h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
-  margin: 0.5rem;
-}
-
-.inicio-contenido p {
-  font-size: 1.2rem;
-  margin: 0.5rem;
-}
-
-.inicio-contenido img {
-  width: 300px;
-  margin-top: 1rem;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-
-.inicio-contenido img:hover {
-  transform: scale(1.05);
-}
-
+/* ===== HERO ===== */
 .inicio-hero {
   background: linear-gradient(90deg, #fff 60%, #e6f4fa 100%);
   min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
   position: relative;
   overflow: hidden;
+}
+
+.video-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#bgVideo {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.45;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #fff 60%, #e6f4fa 100%);
+  opacity: 0.7;
+  z-index: 1;
 }
 
 .inicio-grid {
@@ -214,19 +149,15 @@ video-container .overlay {
   font-size: 2.8rem;
   margin-bottom: 1.2rem;
   font-weight: 700;
-  line-height: 1.1;
 }
 
 .inicio-texto .brand {
   color: #00aeef;
-  font-weight: 700;
 }
 
 .inicio-texto .lead {
-  font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  line-height: 1.4;
   color: #333;
 }
 
@@ -234,7 +165,6 @@ video-container .overlay {
   display: inline-block;
   background: #00aeef;
   color: #fff;
-  font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
   padding: 1rem 2.5rem;
@@ -242,7 +172,6 @@ video-container .overlay {
   text-decoration: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: background 0.3s, transform 0.2s;
-  text-align: center;
   letter-spacing: 1px;
 }
 .btn-cta:hover {
@@ -261,35 +190,36 @@ video-container .overlay {
   width: 100%;
   max-width: 420px;
   border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   object-fit: cover;
 }
 
-#sobre-nosotros img {
-  width: 80%;
-  max-width: 600px;
-  margin: 2rem auto;
-  display: block;
-  border-radius: 8px;
+/* ===== SECCIONES ===== */
+.page-section {
+  padding: 2rem;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
-.form-section,
-.table-section {
-  margin-bottom: 2rem;
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* ===== FORMULARIOS ===== */
 .form-container {
   background: #f9f9f9;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.8);
   max-width: 600px;
   margin: 2rem auto;
-  transition: box-shadow 0.3s;
-}
-
-.form-container:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .form-group {
@@ -326,7 +256,6 @@ button {
   color: #ffffff;
   border: none;
   cursor: pointer;
-  font-size: 1rem;
   transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -342,10 +271,22 @@ button:hover {
   margin-top: 0.25rem;
 }
 
+/* ===== TABLA ===== */
+.table-section {
+  background: #fff;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 table th,
@@ -360,6 +301,58 @@ table th {
   color: #ffffff;
 }
 
+/* Efecto hover en tabla */
+#visitorTable tbody tr:hover {
+  background-color: #f1faff;
+  transition: background 0.3s;
+}
+
+/* ===== SECCIÓN SOBRE NOSOTROS Y CONTACTO ===== */
+#sobre-nosotros,
+#contactanos {
+  background: linear-gradient(120deg, #e6f4fa 60%, #fff 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 174, 239, 0.06);
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+#sobre-nosotros h2,
+#contactanos h2 {
+  color: #003366;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#sobre-nosotros p,
+#contactanos p {
+  text-align: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.15rem;
+}
+
+#sobre-nosotros img {
+  display: block;
+  margin: 2rem auto 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 174, 239, 0.015);
+  max-width: 400px;
+  width: 90%;
+}
+
+#contactanos ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+#contactanos ul li {
+  margin-bottom: 0.5rem;
+  color: #003366;
+  font-weight: 500;
+}
+
+/* ===== FOOTER ===== */
 footer {
   background-color: #003366;
   color: #ffffff;
@@ -368,37 +361,7 @@ footer {
   margin-top: 2rem;
 }
 
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-  }
-
-  nav ul li {
-    margin: 0.5rem 0;
-  }
-
-  .inicio-contenido h2 {
-    font-size: 1.8rem;
-  }
-
-  .inicio-contenido p {
-    font-size: 1rem;
-  }
-
-  .video-container {
-    height: 50vh;
-  }
-
-  #sobre-nosotros img {
-    width: 100%;
-  }
-}
-
+/* ===== RESPONSIVO ===== */
 @media (max-width: 900px) {
   .inicio-grid {
     flex-direction: column;
@@ -419,141 +382,38 @@ footer {
   }
 }
 
-.video-bg-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-}
-#bgVideo {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  min-height: 400px;
-  opacity: 0.45;
-}
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #fff 60%, #e6f4fa 100%);
-  opacity: 0.7;
-  z-index: 1;
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
 }
 
-#registro .form-container {
-  background: #f4fbff;
-  border: 1px solid #b6e0f7;
-  box-shadow: 0 2px 12px rgba(0, 174, 239, 0.07);
-}
-#registro h2 {
+.titulo-registro {
   text-align: center;
-  color: #003366;
-  margin-bottom: 1.5rem;
-}
-#registro .form-group label {
-  color: #003366;
-}
-#registro button {
-  background: linear-gradient(90deg, #00aeef 60%, #003366 100%);
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-#registro .table-section {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.07);
-  padding: 2rem 1rem;
+  font-size: 2.2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #003366; /* azul oscuro institucional */
   margin-top: 2rem;
-}
-#registro table th,
-#registro table td {
-  font-size: 1rem;
-}
-
-#sobre-nosotros {
-  background: linear-gradient(120deg, #e6f4fa 60%, #fff 100%);
-  padding: 3rem 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 174, 239, 0.06);
-  margin: 2rem auto;
-  max-width: 900px;
-}
-#sobre-nosotros h2 {
-  color: #003366;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-#sobre-nosotros p {
-  font-size: 1.15rem;
-  color: #333;
   margin-bottom: 1rem;
-  text-align: center;
-}
-#sobre-nosotros img {
-  display: block;
-  margin: 2rem auto 0 auto;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 174, 239, 0.09);
-  max-width: 400px;
-  width: 90%;
+  border-bottom: 3px solid #00aeef; /* línea celeste institucional */
+  display: inline-block;
+  padding-bottom: 0.3rem;
 }
 
-#contactanos {
-  background: linear-gradient(120deg, #fff 60%, #e6f4fa 100%);
-  padding: 3rem 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 174, 239, 0.06);
-  margin: 2rem auto;
-  max-width: 900px;
-}
-#contactanos h2 {
-  color: #003366;
+.registro-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-bottom: 1.5rem;
-}
-#contactanos ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-#contactanos ul li {
-  margin-bottom: 0.5rem;
-  color: #003366;
-  font-weight: 500;
-}
-#contactanos .form-container {
-  background: #f4fbff;
-  border: 1px solid #b6e0f7;
-  box-shadow: 0 2px 12px rgba(0, 174, 239, 0.07);
-}
-
-@media (max-width: 600px) {
-  .inicio-hero,
-  #sobre-nosotros,
-  #contactanos,
-  #registro .form-container,
-  #registro .table-section {
-    padding: 1rem !important;
-  }
-  .inicio-texto h2,
-  #sobre-nosotros h2,
-  #contactanos h2,
-  #registro h2 {
-    font-size: 1.3rem !important;
-  }
-  .inicio-imagen img,
-  #sobre-nosotros img {
-    max-width: 95vw;
-  }
-  #registro .form-container,
-  #contactanos .form-container {
-    padding: 1rem;
-  }
+  margin-top: 2rem;
 }
